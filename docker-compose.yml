@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  auth:
+    build: ./services/auth
+    container_name: mp_auth_service
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./services/auth/.env
+    restart: unless-stopped
+
+  cases:
+    build: ./services/cases
+    container_name: mp_cases_service
+    ports:
+      - "4001:4001"
+    env_file:
+      - ./services/cases/.env
+    restart: unless-stopped
+
+  reports:
+    build: ./services/reports
+    container_name: mp_reports_service
+    ports:
+      - "4002:4002"
+    env_file:
+      - ./services/reports/.env
+    restart: unless-stopped

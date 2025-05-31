@@ -20,3 +20,14 @@ GO
 
 DROP DATABASE mp_cases_platform;
 GO
+
+# Crear los 3 container de Backend
+docker-compose up --build -d
+
+# Volver a construir y levantar el contenedor
+docker-compose build auth
+docker-compose up -d auth
+
+# Borrar y recrear completamente el contenedor:
+docker rm -f mp_auth_service
+docker-compose up --build -d auth

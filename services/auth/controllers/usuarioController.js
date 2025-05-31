@@ -1,3 +1,5 @@
+const { poolPromise, sql } = require('../db/sql');
+
 exports.listarUsuarios = async (req, res) => {
     try {
       const pool = await poolPromise;
