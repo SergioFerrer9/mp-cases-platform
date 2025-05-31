@@ -1,0 +1,17 @@
+# Comando para levantar el contenedor de base de datos
+cd db-container
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'SscPassword785!' -i init/mp_cases_platform_schema.sql
+
+
+# Prueba local del contenedor de base de datos
+sqlcmd -S localhost -U sa -P 'SscPassword785!'
+
+SELECT name FROM sys.databases;
+GO
+
+USE mp_cases_platform;
+GO
+
+SELECT name FROM sys.tables;
+GO
+
