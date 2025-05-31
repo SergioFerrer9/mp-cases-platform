@@ -18,3 +18,14 @@ exports.crearFiscalia = async (req, res) => {
     res.status(500).json({ mensaje: 'Error al crear fiscalía' });
   }
 };
+
+exports.listarFiscalias = async (req, res) => {
+  try {
+    const pool = await poolPromise;
+    const result = await pool.request().query('SELECT * FROM Fiscalia');
+    res.json(result.recordset);
+  } catch (err) {
+    console.error('Error al listar fiscalías:', err);
+    res.status(500).json({ mensaje: 'Error al obtener fiscalías' });
+  }
+};
