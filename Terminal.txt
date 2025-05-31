@@ -15,3 +15,8 @@ GO
 SELECT name FROM sys.tables;
 GO
 
+USE master;
+GO
+
+DROP DATABASE mp_cases_platform;
+GO

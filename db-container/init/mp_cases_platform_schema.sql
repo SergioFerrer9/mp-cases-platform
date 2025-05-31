@@ -25,7 +25,7 @@ CREATE TABLE Usuario (
     id INT PRIMARY KEY IDENTITY(1,1),
     nombre NVARCHAR(100) NOT NULL,
     correo NVARCHAR(100) NOT NULL UNIQUE,
-    contrasena NVARCHAR(255) NOT NULL,
+    clave NVARCHAR(255) NOT NULL,
     rol NVARCHAR(50) NOT NULL, -- 'fiscal', 'admin'
     fiscalia_id INT NOT NULL,
     FOREIGN KEY (fiscalia_id) REFERENCES Fiscalia(id)
@@ -130,13 +130,13 @@ GO
 CREATE PROCEDURE sp_crear_usuario
     @nombre NVARCHAR(100),
     @correo NVARCHAR(100),
-    @contrasena NVARCHAR(255),
+    @clave NVARCHAR(255),
     @rol NVARCHAR(50),
     @fiscalia_id INT
 AS
 BEGIN
-    INSERT INTO Usuario (nombre, correo, contrasena, rol, fiscalia_id)
-    VALUES (@nombre, @correo, @contrasena, @rol, @fiscalia_id);
+    INSERT INTO Usuario (nombre, correo, clave, rol, fiscalia_id)
+    VALUES (@nombre, @correo, @clave, @rol, @fiscalia_id);
 END;
 GO
 
@@ -182,5 +182,15 @@ CREATE PROCEDURE sp_eliminar_usuario
 AS
 BEGIN
     DELETE FROM Usuario WHERE id = @id;
+END;
+GO
+
+-- Crear Fiscalia
+CREATE PROCEDURE sp_crear_fiscalia
+    @nombre NVARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Fiscalia (nombre)
+    VALUES (@nombre);
 END;
 GO
