@@ -4,8 +4,10 @@ const app = express();
 const authRoutes = require('./routes/authRoutes');
 const fiscaliaRoutes = require('./routes/fiscaliaRoutes');
 const usuarioRoutes = require('./routes/usuarioRoutes');
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/fiscalia', fiscaliaRoutes);
 app.use('/api/usuarios', usuarioRoutes);

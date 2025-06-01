@@ -1,0 +1,22 @@
+.casos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .nuevo-caso-btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .nuevo-caso-btn:hover {
+    background-color: #005fa3;
+  }
+  
