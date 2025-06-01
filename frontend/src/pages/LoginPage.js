@@ -53,6 +53,9 @@ const LoginPage = () => {
         />
         {error && <div className="login-error">{error}</div>}
         <button type="submit">Iniciar Sesión</button>
+        <p className="auth-link" onClick={() => navigate('/registro')}>
+          ¿No tienes cuenta? Regístrate
+        </p>
       </form>
     </div>
   );

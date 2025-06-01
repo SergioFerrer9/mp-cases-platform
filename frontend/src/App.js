@@ -3,6 +3,7 @@ import LoginPage from './pages/LoginPage';
 import CasosPage from './pages/CasosPage';
 import CrearCasoPage from './pages/CrearCasoPage';
 import ReportesPage from './pages/ReportesPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/casos" element={<CasosPage />} />
         <Route path="/casos/crear" element={<CrearCasoPage />} />
         <Route path="/reportes" element={<ReportesPage />} />
+        <Route path="/registro" element={<RegisterPage />} />
       </Routes>
     </Router>
   );
