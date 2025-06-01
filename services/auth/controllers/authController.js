@@ -52,7 +52,7 @@ exports.register = async (req, res) => {
       res.status(201).json({ mensaje: 'Usuario creado exitosamente' });
   
     } catch (err) {
-      console.error('Error al registrar usuario:', err);
+      console.error('Error al registrar usuario:');
       res.status(500).json({ mensaje: 'Error interno del servidor' });
     }
   };
