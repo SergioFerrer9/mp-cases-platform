@@ -156,3 +156,26 @@ exports.listarCasos = async (req, res) => {
     }
   };
   
+  exports.actualizarEstado = async (req, res) => {
+    const { id } = req.params;
+    const { estado } = req.body;
+  
+    if (!['pendiente', 'proceso', 'cerrado'].includes(estado)) {
+      return res.status(400).json({ mensaje: 'Estado inválido' });
+    }
+  
+    try {
+      const pool = await poolPromise;
+      await pool
+        .request()
+        .input('id', sql.Int, id)
+        .input('estado', sql.NVarChar, estado)
+        .query('UPDATE Caso SET estado = @estado WHERE id = @id');
+  
+      res.json({ mensaje: 'Estado actualizado correctamente' });
+    } catch (err) {
+      console.error('Error al actualizar estado del caso:', err);
+      res.status(500).json({ mensaje: 'Error interno al actualizar el estado' });
+    }
+  };
+  

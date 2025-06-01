@@ -27,6 +27,23 @@ const CasosPage = () => {
     fetchCasos();
   }, [token]);
 
+  const handleEstadoChange = async (id, nuevoEstado) => {
+    try {
+      await axios.put(`${process.env.REACT_APP_API_CASES}/casos/${id}/estado`, 
+        { estado: nuevoEstado },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      // Actualiza el estado local
+      setCasos(prevCasos => 
+        prevCasos.map(caso =>
+          caso.id === id ? { ...caso, estado: nuevoEstado } : caso
+        )
+      );
+    } catch (err) {
+      setError('Error al actualizar el estado del caso');
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -48,7 +65,15 @@ const CasosPage = () => {
               <div className="caso-card" key={caso.id}>
                 <h3>{caso.titulo}</h3>
                 <p>{caso.descripcion}</p>
-                <p><strong>Estado:</strong> {caso.estado}</p>
+                <p><strong>Estado:</strong></p>
+                <select
+                  value={caso.estado}
+                  onChange={(e) => handleEstadoChange(caso.id, e.target.value)}
+                >
+                  <option value="pendiente">Pendiente</option>
+                  <option value="en_proceso">En Proceso</option>
+                  <option value="cerrado">Cerrado</option>
+                </select>
                 <p><strong>Fecha:</strong> {new Date(caso.fecha_creacion).toLocaleDateString()}</p>
               </div>
             ))}
