@@ -160,7 +160,7 @@ exports.listarCasos = async (req, res) => {
     const { id } = req.params;
     const { estado } = req.body;
   
-    if (!['pendiente', 'proceso', 'cerrado'].includes(estado)) {
+    if (!['pendiente', 'progreso', 'cerrado'].includes(estado)) {
       return res.status(400).json({ mensaje: 'Estado inválido' });
     }
   

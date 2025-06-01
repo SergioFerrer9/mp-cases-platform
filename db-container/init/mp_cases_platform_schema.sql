@@ -39,7 +39,7 @@ CREATE TABLE Caso (
     id INT PRIMARY KEY IDENTITY(1,1),
     titulo NVARCHAR(100) NOT NULL,
     descripcion NVARCHAR(MAX),
-    estado NVARCHAR(50) NOT NULL CHECK (estado IN ('pendiente', 'en progreso', 'cerrado')),
+    estado NVARCHAR(50) NOT NULL CHECK (estado IN ('pendiente', 'progreso', 'cerrado')),
     fiscal_id INT NOT NULL,
     fecha_creacion DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (fiscal_id) REFERENCES Usuario(id)

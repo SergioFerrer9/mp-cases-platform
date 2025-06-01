@@ -1,53 +1,48 @@
-.casos-container {
-  padding: 2rem;
-}
-
-.casos-header {
+.tabs {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.nuevo-caso-btn {
+.tabs button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tabs .tab-active {
   background-color: #007bff;
   color: white;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
-.casos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.caso-card {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-.estado-buttons {
-  margin-top: 1rem;
+.tabla-contenedor {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.estado-buttons button {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  background-color: #ddd;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.3s;
+.tabla-casos {
+  width: 90%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background-color: white;
 }
 
-.estado-buttons button:hover:not(:disabled) {
-  background-color: #007bff;
-  color: white;
+.tabla-casos th,
+.tabla-casos td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.tabla-casos th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+select {
+  padding: 5px;
 }
