@@ -9,7 +9,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 app.use('/api/auth', authRoutes);
-app.use('/api/fiscalia', fiscaliaRoutes);
+app.use('/api/fiscalias', fiscaliaRoutes);
 app.use('/api/usuarios', usuarioRoutes);
 
 const PORT = process.env.PORT || 4000;

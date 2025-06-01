@@ -4,6 +4,8 @@ import CasosPage from './pages/CasosPage';
 import CrearCasoPage from './pages/CrearCasoPage';
 import ReportesPage from './pages/ReportesPage';
 import RegisterPage from './pages/RegisterPage';
+import FiscaliasPage from './pages/FiscaliasPage';
+import CrearFiscaliaPage from './pages/CrearFiscaliaPage';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/casos/crear" element={<CrearCasoPage />} />
         <Route path="/reportes" element={<ReportesPage />} />
         <Route path="/registro" element={<RegisterPage />} />
+        <Route path="/fiscalias" element={<FiscaliasPage />} />
+        <Route path="/fiscalias/crear" element={<CrearFiscaliaPage />} />
       </Routes>
     </Router>
   );

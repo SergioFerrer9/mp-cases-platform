@@ -23,6 +23,8 @@ const Navbar = () => {
         <button onClick={() => navigate('/casos')} className="nav-btn">Casos</button>
         <button onClick={() => navigate('/casos/crear')} className="nav-btn">+ Nuevo Caso</button>
         <button onClick={() => navigate('/reportes')} className="nav-btn">Reportes</button>
+        <button onClick={() => navigate('/fiscalias')} className="nav-btn">Fiscalías</button>
+        <button onClick={() => navigate('/fiscalias/crear')} className="nav-btn">+ Crear Fiscalía</button>
       </div>
       <div className="navbar-right">
         <span className="user-info">
@@ -35,3 +37,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+  

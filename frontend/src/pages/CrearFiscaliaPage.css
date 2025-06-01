@@ -1,0 +1,35 @@
+.fiscalias-container, .crear-fiscalia-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .fiscalias-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .fiscalias-table th, .fiscalias-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .fiscalias-table th {
+    background-color: #f4f4f4;
+  }
+  
+  form input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #2a80b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
