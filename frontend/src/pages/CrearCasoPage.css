@@ -63,3 +63,12 @@
     color: #c62828;
   }
   
+  .campo-fiscalia {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 8px;
+    margin-bottom: 10px;
+    cursor: not-allowed;
+  }
+  

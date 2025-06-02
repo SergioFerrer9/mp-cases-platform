@@ -178,4 +178,20 @@ exports.listarCasos = async (req, res) => {
       res.status(500).json({ mensaje: 'Error interno al actualizar el estado' });
     }
   };
-  
+
+  exports.casosPorFiscalia = async (req, res) => {
+  try {
+    const pool = await poolPromise;
+    const result = await pool.request().query(`
+      SELECT f.nombre AS fiscalia, COUNT(*) AS total
+      FROM Caso c
+      JOIN Usuario u ON c.fiscal_id = u.id
+      JOIN Fiscalia f ON u.fiscalia_id = f.id
+      GROUP BY f.nombre
+    `);
+    res.json(result.recordset);
+  } catch (err) {
+    console.error('Error al obtener casos por fiscalía:', err);
+    res.status(500).json({ mensaje: 'Error al obtener datos de fiscalías' });
+  }
+};

@@ -103,14 +103,31 @@ END;
 GO
 
 -- Obtener casos por fiscal
+USE mp_cases_platform;
+GO
+
+IF OBJECT_ID('sp_obtener_casos_por_fiscal', 'P') IS NOT NULL
+    DROP PROCEDURE sp_obtener_casos_por_fiscal;
+GO
+
 CREATE PROCEDURE sp_obtener_casos_por_fiscal
     @fiscal_id INT
 AS
 BEGIN
-    SELECT * FROM Caso
-    WHERE fiscal_id = @fiscal_id;
+    SELECT 
+        c.id,
+        c.titulo,
+        c.descripcion,
+        c.estado,
+        c.fecha_creacion,
+        f.nombre AS fiscalia
+    FROM Caso c
+    INNER JOIN Usuario u ON c.fiscal_id = u.id
+    INNER JOIN Fiscalia f ON u.fiscalia_id = f.id
+    WHERE c.fiscal_id = @fiscal_id;
 END;
 GO
+    
 
 -- Generar estadísticas de casos por estado
 CREATE PROCEDURE sp_estadisticas_por_estado
@@ -193,4 +210,9 @@ BEGIN
     INSERT INTO Fiscalia (nombre)
     VALUES (@nombre);
 END;
+GO
+
+-- Crear fiscalía por defecto
+INSERT INTO Fiscalia (nombre)
+VALUES ('Fiscalía Central Guatemala');
 GO

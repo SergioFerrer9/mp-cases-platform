@@ -19,7 +19,7 @@ USE master;
 GO
 
 DROP DATABASE mp_cases_platform;
-GO
+GO  
 
 # Crear los 3 container de Backend
 docker-compose up --build -d

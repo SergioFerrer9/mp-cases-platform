@@ -9,6 +9,7 @@ router.put('/:id/reasignar', verifyToken, reasignarCaso);
 router.get('/logs', verifyToken, verLogs);
 router.get('/:id', verifyToken, obtenerCasoPorId); 
 router.put('/:id/estado', verifyToken, actualizarEstado);
+router.get('/reportes/fiscalias', verifyAdmin, obtenerResumenPorFiscalia);
 
 
 module.exports = router;

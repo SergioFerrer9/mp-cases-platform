@@ -59,6 +59,7 @@ const CasosPage = () => {
           <tr>
             <th>Título</th>
             <th>Descripción</th>
+            <th>Fiscalía</th>
             <th>Estado</th>
             <th>Fecha de Creación</th>
           </tr>
@@ -68,6 +69,7 @@ const CasosPage = () => {
             <tr key={caso.id}>
               <td>{caso.titulo}</td>
               <td>{caso.descripcion}</td>
+              <td>{caso.fiscalia}</td>
               <td>
                 {editable ? (
                   <select
@@ -89,7 +91,7 @@ const CasosPage = () => {
       </table>
     </div>
   );
-
+  
   return (
     <>
       <Navbar />

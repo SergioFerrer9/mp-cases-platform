@@ -29,6 +29,7 @@ const CrearCasoPage = () => {
       setTitulo('');
       setDescripcion('');
     } catch (err) {
+      console.error('Error al registrar el caso:', err);
       setError('Error al registrar el caso');
     }
   };
@@ -39,6 +40,7 @@ const CrearCasoPage = () => {
       <div className="crear-container">
         <form className="crear-form" onSubmit={handleSubmit}>
           <h2>Registrar Nuevo Caso</h2>
+
           <input
             type="text"
             placeholder="Título del caso"
@@ -53,6 +55,7 @@ const CrearCasoPage = () => {
             rows="4"
             required
           />
+
           {mensaje && <div className="crear-msg success">{mensaje}</div>}
           {error && <div className="crear-msg error">{error}</div>}
           <button type="submit">Registrar Caso</button>

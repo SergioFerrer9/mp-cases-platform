@@ -28,7 +28,8 @@ const Navbar = () => {
       </div>
       <div className="navbar-right">
         <span className="user-info">
-          {user?.nombre} <span className="user-role">({user?.rol})</span>
+          {user?.nombre} <span className="user-role">({user?.rol})</span><br />
+          {user?.fiscalia && <span className="user-fiscalia">Fiscalía: {user.fiscalia}</span>}
         </span>
         <button onClick={handleLogout} className="logout-btn">Cerrar sesión</button>
       </div>
@@ -37,4 +38,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-  
