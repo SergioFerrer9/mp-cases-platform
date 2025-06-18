@@ -3,7 +3,7 @@ import axios from 'axios';
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from 'recharts';
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import './ReportesPage.css';
 
 const ReportesPage = () => {

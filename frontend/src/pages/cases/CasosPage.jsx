@@ -1,8 +1,8 @@
-// src/pages/CasosPage.jsx
+// src/pages/cases/CasosPage.jsx
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import CaseTable from '../components/CaseTable';     // Importa el nuevo componente CaseTable
-import useCasesData from '../hooks/useCasesData';   // Importa el nuevo hook useCasesData
+import Navbar from '../../components/Navbar';
+import CaseTable from '../../components/CaseTable';     // Importa el nuevo componente CaseTable
+import useCasesData from '../../hooks/useCasesData';   // Importa el nuevo hook useCasesData
 import './CasosPage.css'; // Estilos específicos de la página
 
 const CasosPage = () => {

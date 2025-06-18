@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Navbar from '../components/Navbar';
+import Navbar from '../../components/Navbar';
 import './CrearFiscaliaPage.css';
 
 const CrearFiscaliaPage = () => {

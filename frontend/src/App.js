@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import CasosPage from './pages/CasosPage';
-import CrearCasoPage from './pages/CrearCasoPage';
-import ReportesPage from './pages/ReportesPage';
-import RegisterPage from './pages/RegisterPage';
-import FiscaliasPage from './pages/FiscaliasPage';
-import CrearFiscaliaPage from './pages/CrearFiscaliaPage';
+import LoginPage from './pages/auth/LoginPage';
+import CasosPage from './pages/cases/CasosPage';
+import CrearCasoPage from './pages/cases/CrearCasoPage';
+import ReportesPage from './pages/reports/ReportesPage';
+import RegisterPage from './pages/auth/RegisterPage';
+import FiscaliasPage from './pages/auth/FiscaliasPage';
+import CrearFiscaliaPage from './pages/auth/CrearFiscaliaPage';
 
 function App() {
   return (

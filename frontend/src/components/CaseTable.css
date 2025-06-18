@@ -14,7 +14,7 @@
 }
 
 .tabla-casos thead tr {
-    background-color: #1405a0;
+    background-color: #0077cc;
     color: #ffffff;
     text-align: left;
 }
@@ -50,6 +50,6 @@
 
 .tabla-casos td select:focus {
     outline: none;
-    border-color: #07a73c;
+    border-color: #0077cc;
     box-shadow: 0 0 0 0.2rem rgba(5, 129, 1, 0.25);
 }
