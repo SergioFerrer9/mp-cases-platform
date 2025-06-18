@@ -28,15 +28,3 @@ services:
       - ./services/reports/.env
     restart: unless-stopped
 
-  frontend:
-    build: ./frontend
-    container_name: mp_frontend
-    ports:
-      - "3000:80"
-    stdin_open: true
-    tty: true
-    restart: unless-stopped
-    depends_on:
-      - auth
-      - cases
-      - reports

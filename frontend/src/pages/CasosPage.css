@@ -1,48 +1,66 @@
+/* src/pages/CasosPage.css */
+
+.casos-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.casos-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .tabs {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
 }
 
 .tabs button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  border: none;
-  background: #ddd;
-  cursor: pointer;
-  border-radius: 5px;
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease;
 }
 
-.tabs .tab-active {
-  background-color: #007bff;
-  color: white;
+.tabs button:hover {
+    background-color: #d0d0d0;
 }
 
-.tabla-contenedor {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.tabs button.tab-active {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 2px solid #007bff;
+    font-weight: bold;
 }
 
-.tabla-casos {
-  width: 90%;
-  max-width: 1000px;
-  border-collapse: collapse;
-  background-color: white;
+.casos-loading,
+.casos-error {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-.tabla-casos th,
-.tabla-casos td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: center;
+.casos-loading {
+    background-color: #eaf6ff;
+    color: #007bff;
+    border: 1px solid #b3d7ff;
 }
 
-.tabla-casos th {
-  background-color: #f0f0f0;
-  font-weight: bold;
-}
-
-select {
-  padding: 5px;
+.casos-error {
+    background-color: #ffeaea;
+    color: #dc3545;
+    border: 1px solid #f5c6cb;
 }

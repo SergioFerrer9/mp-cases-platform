@@ -39,7 +39,7 @@ const CrearCasoPage = () => {
       <Navbar />
       <div className="crear-container">
         <form className="crear-form" onSubmit={handleSubmit}>
-          <h2>Registrar Nuevo Caso</h2>
+          <h2>Crear Nuevo Caso</h2>
 
           <input
             type="text"
