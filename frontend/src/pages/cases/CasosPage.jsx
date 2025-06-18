@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import CaseTable from '../../components/CaseTable';     // Importa el nuevo componente CaseTable
-import useCasesData from '../../hooks/useCasesData';   // Importa el nuevo hook useCasesData
+import CaseTable from '../../components/CaseTable';     
+import useCasesData from '../../hooks/useCasesData';  
 import './CasosPage.css';
 
 const CasosPage = () => {
   const [vista, setVista] = useState('activos');
 
-  // Usa el custom hook para obtener todos los datos y funciones relacionados con los casos
   const {
     casosActivos,
     casosCerrados,
     loading,
     error,
     handleEstadoChange 
-  } = useCasesData(); // Llama al custom hook
+  } = useCasesData(); 
 
   return (
     <>
@@ -42,7 +41,6 @@ const CasosPage = () => {
         {loading && <div className="casos-loading">Cargando casos...</div>}
         {error && <div className="casos-error">{error}</div>}
 
-        {/* Solo renderiza las tablas si no está cargando y no hay un error crítico */}
         {!loading && !error && (
           vista === 'activos' ? (
             <CaseTable
@@ -53,8 +51,8 @@ const CasosPage = () => {
           ) : (
             <CaseTable
               cases={casosCerrados}
-              editable={false} // Los casos cerrados no son editables
-              onEstadoChange={handleEstadoChange} // Todavía se pasa, pero `editable` maneja su uso
+              editable={false} 
+              onEstadoChange={handleEstadoChange} 
             />
           )
         )}
