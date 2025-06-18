@@ -1,9 +1,8 @@
-// src/pages/cases/CasosPage.jsx
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import CaseTable from '../../components/CaseTable';     // Importa el nuevo componente CaseTable
 import useCasesData from '../../hooks/useCasesData';   // Importa el nuevo hook useCasesData
-import './CasosPage.css'; // Estilos específicos de la página
+import './CasosPage.css';
 
 const CasosPage = () => {
   const [vista, setVista] = useState('activos');
@@ -14,7 +13,7 @@ const CasosPage = () => {
     casosCerrados,
     loading,
     error,
-    handleEstadoChange // Esta función ahora la proporciona el hook
+    handleEstadoChange 
   } = useCasesData(); // Llama al custom hook
 
   return (
@@ -22,7 +21,7 @@ const CasosPage = () => {
       <Navbar />
       <div className="casos-container">
         <div className="casos-header">
-          <h2>Listado de Casos Asignados</h2>
+          <h2>Casos Asignados</h2>
         </div>
 
         <div className="tabs">
