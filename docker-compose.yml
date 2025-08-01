@@ -1,6 +1,19 @@
 version: '3.9'
 
 services:
+  frontend:
+    build: ./frontend
+    container_name: mp-frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - auth
+      - cases
+      - reports
+    restart: unless-stopped
+
   auth:
     build: ./services/auth
     container_name: mp_auth_service

@@ -7,7 +7,15 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/reportes', reportRoutes);
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.get('/', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.use('/api/reports', reportRoutes);
 
 const PORT = process.env.PORT || 4002;
 

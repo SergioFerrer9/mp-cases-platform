@@ -20,7 +20,7 @@ const useCasesData = () => {
     setLoading(true);
     setError(''); 
     try {
-      const res = await axios.get(`${process.env.REACT_APP_API_CASES}/casos`, {
+      const res = await axios.get(`${process.env.REACT_APP_API_CASES}/cases`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -57,7 +57,7 @@ const useCasesData = () => {
     setError(''); 
     try {
       await axios.put(
-        `${process.env.REACT_APP_API_CASES}/casos/${id}/estado`,
+        `${process.env.REACT_APP_API_CASES}/cases/${id}/estado`,
         { estado: nuevoEstado },
         { headers: { Authorization: `Bearer ${token}` } }
       );

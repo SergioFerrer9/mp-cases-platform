@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: mp-cases-platform
+  labels:
+    app: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: sergioferrer9/mp-frontend:1.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REACT_APP_AUTH_SERVICE_URL
+          value: "http://auth-service:4000"
+        - name: REACT_APP_CASES_SERVICE_URL
+          value: "http://cases-service:4001"
+        - name: REACT_APP_REPORTS_SERVICE_URL
+          value: "http://reports-service:4002"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5 

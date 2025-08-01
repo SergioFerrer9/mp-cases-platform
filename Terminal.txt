@@ -31,3 +31,12 @@ docker-compose up -d auth
 # Borrar y recrear completamente el contenedor:
 docker rm -f mp_auth_service
 docker-compose up --build -d auth
+
+docker compose down
+-- Docker Compose version v2.27.1
+
+--Generar imagenes, ubicacion raiz del repositorio
+docker build -t sergioferrer9/mp-auth-service ./services/auth
+docker build -t sergioferrer9/mp-cases-service ./services/cases
+docker build -t sergioferrer9/mp-reports-service ./services/reports
+docker build -t sergioferrer9/mp-frontend ./services/frontend

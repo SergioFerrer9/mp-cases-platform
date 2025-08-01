@@ -16,10 +16,10 @@ const ReportesPage = () => {
     const fetchDatos = async () => {
       try {
         const [resEstado, resFiscalia] = await Promise.all([
-          axios.get(`${process.env.REACT_APP_API_REPORTS}/reportes/estadisticas`, {
+          axios.get(`${process.env.REACT_APP_API_REPORTS}/reports/estadisticas`, {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get(`${process.env.REACT_APP_API_REPORTS}/reportes/fiscalias`, {
+          axios.get(`${process.env.REACT_APP_API_REPORTS}/reports/fiscalias`, {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);

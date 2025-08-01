@@ -1,29 +1,22 @@
-# Usa una imagen base de Node.js para construir la aplicación
+# Etapa de build
 FROM node:18 AS build
-
-# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copia los archivos del proyecto al contenedor
-COPY . .
-
-# Instala las dependencias del proyecto
+# Copiar solo package.json primero para aprovechar el cache
+COPY package*.json ./
 RUN npm install
 
-# Compila la aplicación para producción
+# Ahora copiar todo incluyendo .env
+COPY . .
+
+# Build de la app (React lee el .env en este paso)
 RUN npm run build
 
-# Usa un servidor Nginx para servir la aplicación compilada
-FROM nginx:alpine
-
-# Copia los archivos compilados al directorio de Nginx
+# Etapa de producción con NGINX
+FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Copia el archivo de configuración de Nginx si lo necesitas (opcional)
-# COPY nginx.conf /etc/nginx/nginx.conf
+# Opcional: reemplazar default.conf si lo necesitas
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expone el puerto por defecto de Nginx
 EXPOSE 80
-
-# Comando por defecto para correr Nginx
-CMD ["nginx", "-g", "daemon off;"]

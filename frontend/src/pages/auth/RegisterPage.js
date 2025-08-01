@@ -26,7 +26,7 @@ function RegisterPage() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/auth/register', formData);
+      const res = await axios.post(`${process.env.REACT_APP_API_AUTH}/auth/register`, formData);
       setMensaje(res.data.mensaje || 'Usuario registrado con éxito');
       setError('');
     } catch (err) {

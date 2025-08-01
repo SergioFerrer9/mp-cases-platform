@@ -17,7 +17,7 @@ const CrearCasoPage = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API_CASES}/casos`,
+        `${process.env.REACT_APP_API_CASES}/cases`,
         { titulo, descripcion },
         {
           headers: {
